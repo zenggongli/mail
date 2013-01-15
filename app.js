@@ -1,9 +1,10 @@
 var http = require('http');
 
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'});
   res.end(mailOptions.html+tail);
-}).listen(process.env.APP_PORT || 80, null);
+}).listen(port, null);
 
 var nodemailer = require("nodemailer"),json=require("json-serialize");
 
